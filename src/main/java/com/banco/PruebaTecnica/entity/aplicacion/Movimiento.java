@@ -18,6 +18,7 @@ public class Movimiento {
     @ManyToOne
     @JoinColumn(name = "cuenta")
     private Cuenta cuenta;
+    private String estado;
     private String descripcion;
     private Date fechaRegistro;
     private Date fechaModifica;
@@ -73,6 +74,14 @@ public class Movimiento {
         this.cuenta = cuenta;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -106,6 +115,7 @@ public class Movimiento {
                 ", valor=" + valor +
                 ", saldo=" + saldo +
                 ", cuenta=" + cuenta +
+                ", estado='" + estado + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", fechaRegistro=" + fechaRegistro +
                 ", fechaModifica=" + fechaModifica +

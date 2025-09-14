@@ -14,6 +14,12 @@ public enum CatalogoMensaje {
     E009("E009", "Cuenta creada con exito", ""),
     E010("E010", "Cuenta no encontrada", ""),
     E011("E011", "No se puede cambiar el numero de la cuenta", ""),
+    E012("E012", "Saldo no disponible", ""),
+    E013("E013", "Transacción realizada con exito", ""),
+    E014("E014", "Solo se puede reversar el ultimo movimiento", ""),
+    E015("E015", "Movimiento reversado con exito", ""),
+    E016("E016", "No hay ningun movimiento en el rango de fechas", ""),
+    E017("E017", "Fecha hasta debe ser mayor a la fecha desde", ""),
     ;
 
     private final String codigo;

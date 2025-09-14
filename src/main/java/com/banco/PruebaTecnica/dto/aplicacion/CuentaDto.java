@@ -2,6 +2,7 @@ package com.banco.PruebaTecnica.dto.aplicacion;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class CuentaDto {
     private Long id;
@@ -13,7 +14,8 @@ public class CuentaDto {
     private String estado;
     private Date fechaRegistro;
     private Date fechaModifica;
-
+    //Campos adicionales
+    private List<MovimientoDto> movimientos;
     public CuentaDto() {
     }
 
@@ -89,6 +91,14 @@ public class CuentaDto {
         this.fechaModifica = fechaModifica;
     }
 
+    public List<MovimientoDto> getMovimientos() {
+        return movimientos;
+    }
+
+    public void setMovimientos(List<MovimientoDto> movimientos) {
+        this.movimientos = movimientos;
+    }
+
     @Override
     public String toString() {
         return "CuentaDto{" +
@@ -101,6 +111,7 @@ public class CuentaDto {
                 ", estado='" + estado + '\'' +
                 ", fechaRegistro=" + fechaRegistro +
                 ", fechaModifica=" + fechaModifica +
+                ", movimientos=" + movimientos +
                 '}';
     }
 }

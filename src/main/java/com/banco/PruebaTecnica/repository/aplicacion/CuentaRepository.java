@@ -14,4 +14,5 @@ public interface CuentaRepository extends JpaRepository<Cuenta, Long> {
     List<Cuenta> findAllByEstado(String estado);
 
     List<Cuenta> findAllByCliente_IdAndEstado(Long id, String estado);
+
 }
