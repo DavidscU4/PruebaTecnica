@@ -5,17 +5,14 @@ import java.util.Date;
 public class PersonaDto {
     private Long id;
     private String identificacion;
-    private String nombre;
-    private String apellido;
-    private String email;
+    private String nombres;
     private String telefono;
     private String direccion;
     private String genero;
-    private String edad;
+    private Integer edad;
     private String estado;
     private Date fechaRegistro;
     private Date fechaModifica;
-    private String nombreCompleto;
 
     public PersonaDto() {
     }
@@ -36,28 +33,12 @@ public class PersonaDto {
         this.identificacion = identificacion;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getTelefono() {
@@ -84,11 +65,11 @@ public class PersonaDto {
         this.genero = genero;
     }
 
-    public String getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
@@ -116,22 +97,12 @@ public class PersonaDto {
         this.fechaModifica = fechaModifica;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
-    }
-
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
-    }
-
     @Override
     public String toString() {
         return "PersonaDto{" +
                 "id=" + id +
                 ", identificacion='" + identificacion + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", email='" + email + '\'' +
+                ", nombres='" + nombres + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", genero='" + genero + '\'' +
@@ -139,7 +110,6 @@ public class PersonaDto {
                 ", estado='" + estado + '\'' +
                 ", fechaRegistro=" + fechaRegistro +
                 ", fechaModifica=" + fechaModifica +
-                ", nombreCompleto='" + nombreCompleto + '\'' +
                 '}';
     }
 }

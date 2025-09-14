@@ -15,7 +15,7 @@ public class Movimiento {
     private String tipoMovimiento;
     private BigDecimal valor;
     private BigDecimal saldo;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "cuenta")
     private Cuenta cuenta;
     private String descripcion;

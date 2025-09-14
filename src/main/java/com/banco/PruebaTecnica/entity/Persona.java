@@ -2,7 +2,6 @@ package com.banco.PruebaTecnica.entity;
 
 import com.banco.PruebaTecnica.util.EsquemaConfig;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Formula;
 
 import java.util.Date;
 
@@ -14,20 +13,35 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String identificacion;
-    private String nombre;
-    private String apellido;
-    private String email;
+    private String nombres;
     private String telefono;
     private String direccion;
     private String genero;
-    private String edad;
+    private Integer edad;
     private String estado;
     private Date fechaRegistro;
     private Date fechaModifica;
-    @Formula("(select upper(concat(c.apellido,' ',c.nombre)) from public.persona c where c.id=id)")
-    private String nombreCompleto;
 
     public Persona() {
+    }
+
+    public Persona(Long id, String identificacion, String nombres, String telefono, String direccion, String genero, Integer edad) {
+        this.id = id;
+        this.identificacion = identificacion;
+        this.nombres = nombres;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.genero = genero;
+        this.edad = edad;
+    }
+
+    public Persona(String identificacion, String nombres, String telefono, String direccion, String genero, Integer edad) {
+        this.identificacion = identificacion;
+        this.nombres = nombres;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.genero = genero;
+        this.edad = edad;
     }
 
     public Long getId() {
@@ -46,28 +60,12 @@ public class Persona {
         this.identificacion = identificacion;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getTelefono() {
@@ -94,11 +92,11 @@ public class Persona {
         this.genero = genero;
     }
 
-    public String getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
@@ -126,22 +124,12 @@ public class Persona {
         this.fechaModifica = fechaModifica;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
-    }
-
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
-    }
-
     @Override
     public String toString() {
         return "PersonaMapper{" +
                 "id=" + id +
                 ", identificacion='" + identificacion + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", email='" + email + '\'' +
+                ", nombres='" + nombres + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", genero='" + genero + '\'' +
@@ -149,7 +137,6 @@ public class Persona {
                 ", estado='" + estado + '\'' +
                 ", fechaRegistro=" + fechaRegistro +
                 ", fechaModifica=" + fechaModifica +
-                ", nombreCompleto='" + nombreCompleto + '\'' +
                 '}';
     }
 }
