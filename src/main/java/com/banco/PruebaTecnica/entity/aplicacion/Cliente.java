@@ -3,6 +3,9 @@ package com.banco.PruebaTecnica.entity.aplicacion;
 import com.banco.PruebaTecnica.entity.Persona;
 import com.banco.PruebaTecnica.util.EsquemaConfig;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 import java.util.Date;
 
 @Entity
@@ -14,7 +17,9 @@ public class Cliente {
     private Long id;
     @ManyToOne
     @JoinColumn(name = "persona")
+    @NotNull
     private Persona persona;
+    @NotBlank
     private String clave;
     private String estado;
     private Date fechaRegistro;

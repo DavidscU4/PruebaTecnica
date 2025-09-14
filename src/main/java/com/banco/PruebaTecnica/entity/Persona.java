@@ -25,6 +25,10 @@ public class Persona {
     public Persona() {
     }
 
+    public Persona(Long id) {
+        this.id = id;
+    }
+
     public Persona(Long id, String identificacion, String nombres, String telefono, String direccion, String genero, Integer edad) {
         this.id = id;
         this.identificacion = identificacion;
